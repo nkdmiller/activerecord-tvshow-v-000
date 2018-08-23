@@ -3,6 +3,7 @@ class Show < ActiveRecord::Base
     Show.maximum("rating")
   end
   def self.most_popular_show
+<<<<<<< HEAD
     Show.find_by(rating: Show.maximum("rating"))
   end
   def self.lowest_rating
@@ -31,4 +32,9 @@ class Show < ActiveRecord::Base
     Show.order(name: :asc)
   end
         
+=======
+    binding.pry
+    Show.where(rating: Show.maximum("rating"))
+  end
+>>>>>>> 7fecf12120fb19c1a82dc6720644806e9d130102
 end
